@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
@@ -7,12 +7,12 @@ import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
 import {
   Ecommerce,
   Orders,
-  Calendar,
   Employees,
   Stacked,
   Pyramid,
   Customers,
   Kanban,
+  Calendar,
   Area,
   Bar,
   Pie,
@@ -73,12 +73,12 @@ const App = () => {
                 {/* Apps */}
                 <Route path="/kanban" element={<Kanban />} />
                 <Route path="/editor" element={<Editor />} />
-                <Route path="/calender" element={<Calendar />} />
+                <Route path="/calendar" element={<Calendar />} />
                 <Route path="/color-picker" element={<ColorPicker />} />
 
                 {/* Charts */}
                 <Route path="/line" element={<Line />} />
-                <Route path="/are" element={<Area />} />
+                <Route path="/area" element={<Area />} />
                 <Route path="/bar" element={<Bar />} />
                 <Route path="/pie" element={<Pie />} />
                 <Route path="/financial" element={<Financial />} />
