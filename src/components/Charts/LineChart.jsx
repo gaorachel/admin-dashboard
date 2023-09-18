@@ -12,6 +12,7 @@ import {
 
 import { lineCustomSeries, LinePrimaryXAxis, LinePrimaryYAxis } from "../../data/dummy";
 import { useStateContext } from "../../contexts/ContextProvider";
+import { TextStyle } from "@syncfusion/ej2/svg-base";
 
 const LineChart = () => {
   const { currentMode } = useStateContext();
@@ -25,10 +26,7 @@ const LineChart = () => {
         chartArea={{ border: { width: 0 } }}
         tooltip={{ enable: true }}
         background={currentMode === "Dark" ? "#33373E" : "#fff"}
-        // style={{
-        //   background: currentMode === "Dark" ? "#33373E" : "#fff",
-        //   color: currentMode === "Dark" ? "#fff" : "#33373E",
-        // }}
+        legendSettings={{ background: "white" }}
       >
         <Inject services={[LineSeries, DateTime, Legend, Tooltip]} />
         <SeriesCollectionDirective>
