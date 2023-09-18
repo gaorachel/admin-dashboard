@@ -13,6 +13,10 @@ const initialChartStyle = {
   background: "#33373E",
   legendSettings: {
     background: "#33373E",
+    textStyle: {
+      color: "#fff",
+      size: "18px",
+      fontFamily: "sans-serif",
     },
   },
 };
