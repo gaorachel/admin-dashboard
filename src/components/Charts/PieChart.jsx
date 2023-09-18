@@ -13,19 +13,15 @@ import {
 import { useStateContext } from "../../contexts/ContextProvider";
 
 const Doughnut = ({ id, data, legendVisiblity, height }) => {
-  const { currentMode } = useStateContext();
+  const { chartStyle } = useStateContext();
 
   return (
     <AccumulationChartComponent
       id={id}
-      legendSettings={{
-        visible: legendVisiblity,
-        background: currentMode === "Dark" ? "#33373E" : "#fff",
-        textStyle: { color: currentMode === "Dark" ? "#fff" : "#33373E" },
-      }}
       height={height}
-      background={currentMode === "Dark" ? "#33373E" : "#fff"}
       tooltip={{ enable: true }}
+      background={chartStyle.background}
+      legendSettings={chartStyle.legendSettings}
     >
       <Inject services={[AccumulationLegend, PieSeries, AccumulationDataLabel, AccumulationTooltip]} />
       <AccumulationSeriesCollectionDirective>
@@ -48,6 +44,7 @@ const Doughnut = ({ id, data, legendVisiblity, height }) => {
             font: {
               fontWeight: "600",
               color: "#fff",
+              size: "16px",
             },
           }}
         />
