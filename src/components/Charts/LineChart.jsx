@@ -15,7 +15,8 @@ import { useStateContext } from "../../contexts/ContextProvider";
 import { TextStyle } from "@syncfusion/ej2/svg-base";
 
 const LineChart = () => {
-  const { currentMode } = useStateContext();
+  const { chartStyle } = useStateContext();
+
   return (
     <div>
       <ChartComponent
@@ -25,8 +26,8 @@ const LineChart = () => {
         primaryYAxis={LinePrimaryYAxis}
         chartArea={{ border: { width: 0 } }}
         tooltip={{ enable: true }}
-        background={currentMode === "Dark" ? "#33373E" : "#fff"}
-        legendSettings={{ background: "white" }}
+        background={chartStyle.background}
+        legendSettings={chartStyle.legendSettings}
       >
         <Inject services={[LineSeries, DateTime, Legend, Tooltip]} />
         <SeriesCollectionDirective>

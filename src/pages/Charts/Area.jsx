@@ -14,10 +14,10 @@ import { areaCustomSeries, areaPrimaryXAxis, areaPrimaryYAxis } from "../../data
 import { useStateContext } from "../../contexts/ContextProvider";
 
 const Area = () => {
-  const { currentMode } = useStateContext();
+  const { chartStyle } = useStateContext();
   return (
     <div>
-      <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
+      <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-gray-900 rounded-3xl">
         <Header category="Chart" title="Inflation Rate %" />
         <ChartComponent
           id="Line-chart"
@@ -26,7 +26,8 @@ const Area = () => {
           primaryYAxis={areaPrimaryYAxis}
           chartArea={{ border: { width: 0 } }}
           tooltip={{ enable: true }}
-          background={currentMode === "Dark" ? "#33373E" : "#fff"}
+          background={chartStyle.background}
+          legendSettings={chartStyle.legendSettings}
         >
           <Inject services={[SplineAreaSeries, DateTime, Legend]} />
           <SeriesCollectionDirective>

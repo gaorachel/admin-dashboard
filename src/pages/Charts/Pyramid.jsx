@@ -16,17 +16,17 @@ import { useStateContext } from "../../contexts/ContextProvider";
 import { Header } from "../../components";
 
 const Pyramid = () => {
-  const { currentMode } = useStateContext();
+  const { currentMode, chartStyle } = useStateContext();
 
   return (
-    <div className="m-4 md:m-10 mt-24  p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
+    <div className="m-4 md:m-10 mt-24  p-10 bg-white dark:bg-gray-900 rounded-3xl">
       <Header category="Chart" title="Food Comparison Chart" />
       <div className="w-full">
         <AccumulationChartComponent
           id="pyramid-chart"
-          legendSettings={{ background: "white" }}
           tooltip={{ enable: true }}
-          background={currentMode === "Dark" ? "#33373E" : "#fff"}
+          background={chartStyle.background}
+          legendSettings={chartStyle.legendSettings}
         >
           <Inject
             services={[
@@ -54,6 +54,11 @@ const Pyramid = () => {
                 visible: true,
                 position: "Inside",
                 name: "text",
+                font: {
+                  fontFamily: "sans-serif",
+                  size: "16px",
+                  color: currentMode === "Dark" ? "#fff" : "#33373E",
+                },
               }}
             />
           </AccumulationSeriesCollectionDirective>

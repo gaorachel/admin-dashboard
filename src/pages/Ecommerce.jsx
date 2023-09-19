@@ -1,7 +1,6 @@
 import React from "react";
-import { BsCurrencyDollar } from "react-icons/bs";
 import { GoDotFill } from "react-icons/go";
-import { Stacked, Pie, Button, SparkLine } from "../components";
+import { StackedChart, Pie, Button, SparkLine } from "../components";
 import { earningData, SparklineAreaData, ecomPieChartData } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 
@@ -11,7 +10,7 @@ const Ecommerce = () => {
   return (
     <div className="mt-12">
       <div className="flex flex-wrap lg:flex-nowrap justify-center">
-        <div className="bg-white dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center">
+        <div className="bg-white dark:text-gray-200 dark:bg-gray-900 h-44 rounded-xl w-full lg:w-80 p-4 pt-9 m-3 ">
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400"> Earning </p>
@@ -24,10 +23,7 @@ const Ecommerce = () => {
         </div>
         <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
           {earningData.map((item) => (
-            <div
-              key={item.title}
-              className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-56 p-4 pt-9 rounded-2xl"
-            >
+            <div key={item.title} className="bg-white dark:text-gray-200 dark:bg-gray-900 md:w-56 p-4 pt-9 rounded-2xl">
               <button
                 type="button"
                 style={{ color: item.iconColor, backgroundColor: item.iconBg }}
@@ -45,7 +41,7 @@ const Ecommerce = () => {
         </div>
       </div>
       <div className="flex gap-10 flex-wrap justify-center">
-        <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg m-3 p-4 rounded-2xl md:w-780">
+        <div className="bg-white dark:text-gray-200 dark:bg-gray-900 m-3 p-4 rounded-2xl md:w-780">
           <div className="flex justify-between">
             <p className=" font-semibold text-xl"> Revenue Updates </p>
             <div className="flex items-center gap-4">
@@ -71,12 +67,12 @@ const Ecommerce = () => {
                   23%
                 </span>
               </p>
-              <p className="text-gray-500 mt-1"> Budget </p>
+              <p className="text-gray-400 mt-1"> Budget </p>
               <div className="mt-8">
                 <p>
                   <span className="text-3xl font-semibold"> $48,438 </span>
                 </p>
-                <p className="text-gray-500 mt-1"> Expense </p>
+                <p className="text-gray-400 mt-1"> Expense </p>
               </div>
               <div className="mt-5">
                 <SparkLine
@@ -94,7 +90,7 @@ const Ecommerce = () => {
               </div>
             </div>
             <div>
-              <Stacked width="320px" height="360px" />
+              <StackedChart width="320px" height="360px" />
             </div>
           </div>
         </div>

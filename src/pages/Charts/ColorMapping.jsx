@@ -22,10 +22,10 @@ import { Header } from "../../components";
 import { useStateContext } from "../../contexts/ContextProvider";
 
 const ColorMapping = () => {
-  const { currentMode } = useStateContext();
+  const { chartStyle } = useStateContext();
 
   return (
-    <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
+    <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-gray-900 rounded-3xl">
       <Header category="Chart" title="USA CLIMATE - WEATHER BY MONTH" />
       <div className="w-full">
         <ChartComponent
@@ -33,9 +33,9 @@ const ColorMapping = () => {
           primaryXAxis={ColorMappingPrimaryXAxis}
           primaryYAxis={ColorMappingPrimaryYAxis}
           chartArea={{ border: { width: 0 } }}
-          legendSettings={{ mode: "Range", background: "white" }}
           tooltip={{ enable: true }}
-          background={currentMode === "Dark" ? "#33373E" : "#fff"}
+          background={chartStyle.background}
+          legendSettings={{ ...chartStyle.legendSettings, mode: "Range" }}
         >
           <Inject services={[ColumnSeries, Tooltip, Category, Legend]} />
           <SeriesCollectionDirective>
@@ -52,7 +52,6 @@ const ColorMapping = () => {
             />
           </SeriesCollectionDirective>
           <RangeColorSettingsDirective>
-            {/* eslint-disable-next-line react/jsx-props-no-spreading */}
             {rangeColorMapping.map((item, index) => (
               <RangeColorSettingDirective key={index} {...item} />
             ))}

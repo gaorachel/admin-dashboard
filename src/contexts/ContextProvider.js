@@ -9,22 +9,45 @@ const initialState = {
   notification: false,
 };
 
+const initialChartStyle = {
+  background: "transparent",
+  legendSettings: {
+    background: "transparent",
+    textStyle: {
+      color: "#fff",
+      size: "18px",
+      fontFamily: "sans-serif",
+    },
+  },
+};
+
 export const ContextProvider = ({ children }) => {
   const [activeMenu, setActiveMenu] = useState(true);
   const [isClicked, setIsClicked] = useState(initialState);
   const [screenSize, setScreenSize] = useState(undefined);
   const [currentColor, setCurrentColor] = useState("#03C9D7");
-  const [currentMode, setCurrentMode] = useState("Light");
+  const [currentMode, setCurrentMode] = useState("Dark");
   const [themeSettings, setThemeSettings] = useState(false);
+  const [chartStyle, setChartStyle] = useState(initialChartStyle);
 
   const handleClick = (clicked) => {
     setIsClicked({ ...initialState, [clicked]: true });
   };
 
   const setMode = (e) => {
-    setCurrentMode(e.target.value);
+    const currentTheme = e.target.value;
 
-    localStorage.setItem("themeMode", e.target.value);
+    setCurrentMode(currentTheme);
+
+    setChartStyle({
+      legendSettings: {
+        textStyle: {
+          color: currentTheme === "Dark" ? "#fff" : "",
+        },
+      },
+    });
+
+    localStorage.setItem("themeMode", currentTheme);
 
     setThemeSettings(false);
   };
@@ -53,6 +76,7 @@ export const ContextProvider = ({ children }) => {
         setColor,
         themeSettings,
         setThemeSettings,
+        chartStyle,
       }}
     >
       {children}
