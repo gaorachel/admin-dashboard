@@ -16,7 +16,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
       type="botton"
       onClick={() => customFunc()}
       style={{ color }}
-      className="relative text-xl rounded-full p-3 hover:bg-light-gray"
+      className="relative text-xl rounded-full p-3 hover:bg-light-gray dark:hover:bg-gray-500"
     >
       <span style={{ background: dotColor }} className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2" />
       {icon}
@@ -58,25 +58,26 @@ const Navbar = () => {
           title="Chat"
           customFunc={() => handleClick("chat")}
           color={currentColor}
-          dotColor="#03c9d7"
+          dotColor="red"
           icon={<BsChatLeft />}
         />
         <NavButton
           title="Notifications"
           customFunc={() => handleClick("notification")}
           color={currentColor}
-          dotColor="#03c9d7"
+          dotColor="red"
           icon={<RiNotification3Line />}
         />
         <TooltipComponent content="profile" position="BottomCenter">
           <div
-            className="flex items-center gap-2 cursor-pointer p-1 hover: bg-light-gray rounded-lg"
+            className="flex items-center gap-2 cursor-pointer p-1 rounded-lg "
+            style={{ backgroundColor: currentColor }}
             onClick={() => handleClick("userProfile")}
           >
-            <img src={avatar} className="rounded-full w-8 h-8" />
+            <img alt="profile" src={avatar} className="rounded-full w-8 h-8" />
             <p>
-              <span className="text-gray-400 text-14"> Hi, </span>{" "}
-              <span className="text-gray-400 font-bold ml-1 text-14"> Micheal </span>
+              <span className="text-gray-400 dark:text-gray-900 text-14"> Hi, </span>
+              <span className="text-gray-400 dark:text-gray-900 font-bold ml-1 text-14"> Micheal </span>
             </p>
             <MdKeyboardArrowDown className="text-gray-400 text-14" />
           </div>

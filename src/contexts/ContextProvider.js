@@ -10,9 +10,9 @@ const initialState = {
 };
 
 const initialChartStyle = {
-  background: "#33373E",
+  background: "transparent",
   legendSettings: {
-    background: "#33373E",
+    background: "transparent",
     textStyle: {
       color: "#fff",
       size: "18px",
@@ -40,9 +40,7 @@ export const ContextProvider = ({ children }) => {
     setCurrentMode(currentTheme);
 
     setChartStyle({
-      background: currentTheme === "Dark" ? "#33373E" : "#fff",
       legendSettings: {
-        background: currentTheme === "Dark" ? "#33373E" : "#fff",
         textStyle: {
           color: currentTheme === "Dark" ? "#fff" : "",
         },

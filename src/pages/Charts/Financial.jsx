@@ -32,7 +32,7 @@ const Financial = () => {
   const { currentMode, chartStyle } = useStateContext();
 
   return (
-    <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl text-gray-400 dark:text-white">
+    <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-gray-900 rounded-3xl text-gray-400 dark:text-white">
       <Header category="Chart" title="AAPLE Historical" />
       <div className="w-full">
         <ChartComponent
