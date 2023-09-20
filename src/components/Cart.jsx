@@ -51,7 +51,7 @@ const Cart = () => {
                     <p className="font-semibold text-lg">{item.price}</p>
                     <div className="flex items-center ">
                       <button
-                        className="p-2 bg-gray-300 dark:bg-gray-700 text-gray-900 rounded-md"
+                        className="p-2 bg-gray-300 dark:bg-gray-700 text-gray-900 rounded-md hover:bg-gray-400 dark:hover:bg-gray-400"
                         type="button"
                         onClick={() => {
                           const updatedData = [...data];
@@ -64,7 +64,7 @@ const Cart = () => {
                       </button>
                       <p className="p-2 text-black dark:text-white"> {item.qty} </p>
                       <button
-                        className="p-2 bg-gray-300 dark:bg-gray-700 text-gray-900 rounded-md"
+                        className="p-2 bg-gray-300 dark:bg-gray-700 text-gray-900 rounded-md hover:bg-gray-400 dark:hover:bg-gray-400"
                         type="button"
                         onClick={() => {
                           const updatedData = [...data];
@@ -85,11 +85,11 @@ const Cart = () => {
         <div className="mt-3 mb-3">
           <div className="flex justify-between items-center">
             <p className="text-gray-500 dark:text-gray-400">Sub Total</p>
-            <p className="text-gray-500 dark:text-gray-400"> {`£${subTotal}`} </p>
+            <p className="text-gray-500 dark:text-gray-400"> {`£${subTotal.toLocaleString()}`} </p>
           </div>
           <div className="flex justify-between items-center mt-3">
             <p className="text-black dark:text-gray-300 font-semibold">Total (+ 20% VAT) </p>
-            <p className="text-black dark:text-gray-300 font-semibold"> {`£${subTotal * 1.2}`} </p>
+            <p className="text-black dark:text-gray-300 font-semibold"> {`£${(subTotal * 1.2).toLocaleString()}`} </p>
           </div>
         </div>
         <div className="mt-5">
