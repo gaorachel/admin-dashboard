@@ -14,7 +14,7 @@ const Ecommerce = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400"> Earning </p>
-              <p className="text-2xl"> $63,448.78 </p>
+              <p className="text-2xl"> £63,448.78 </p>
             </div>
           </div>
           <div className="mt-6">
@@ -33,7 +33,7 @@ const Ecommerce = () => {
               </button>
               <p className="mt-3">
                 <span className="text-lg font-semibold"> {item.amount} </span>
-                <span className={`text-sm text-${item.pcColor} ml-2`}> {item.percentage} </span>
+                <span className={`text-sm text-£{item.pcColor} ml-2`}> {item.percentage} </span>
               </p>
               <p className="text-sm text-gray-400 mt-1"> {item.title} </p>
             </div>
@@ -62,7 +62,7 @@ const Ecommerce = () => {
           <div className="mt-10  gap-10 flex flex-wrap justify-center ">
             <div className="border-r-1 border-color m-4 pr-10 ">
               <p>
-                <span className="text-3xl font-semibold"> $93,438 </span>
+                <span className="text-3xl font-semibold"> £93,438 </span>
                 <span className="p-1.5 hover:drop-shadow-xl rounded-full text-white bg-green-400 dark:text-gray-900 ml-3 text-xs font-semibold">
                   23%
                 </span>
@@ -70,7 +70,7 @@ const Ecommerce = () => {
               <p className="text-gray-400 mt-1"> Budget </p>
               <div className="mt-8">
                 <p>
-                  <span className="text-3xl font-semibold"> $48,438 </span>
+                  <span className="text-3xl font-semibold"> £48,438 </span>
                 </p>
                 <p className="text-gray-400 mt-1"> Expense </p>
               </div>
