@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { MdOutlineCancel } from "react-icons/md";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 import { useStateContext } from "../contexts/ContextProvider";
 import { cartData } from "../data/dummy";
-import { Button } from ".";
+import { Button, CloseButton } from ".";
 
 const Cart = () => {
   const { currentColor, isClicked, setIsClicked } = useStateContext();
@@ -30,14 +29,7 @@ const Cart = () => {
       <div className="float-right h-screen  duration-1000 ease-in-out dark:text-gray-200 transition-all dark:bg-gray-900 bg-white md:w-400 p-8">
         <div className="flex justify-between items-center">
           <p className="font-semibold text-lg">Shopping Cart</p>
-          <button
-            type="button"
-            onClick={() => setIsClicked(isClicked.cart === "false")}
-            style={{ color: "rgb(153, 171, 180)", borderRadius: "50%" }}
-            className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray dark:hover:bg-gray-500"
-          >
-            <MdOutlineCancel />
-          </button>
+          <CloseButton handleClick={() => setIsClicked(isClicked.cart === "false")} />
         </div>
         {data.map((item, index) => (
           <div key={index}>
