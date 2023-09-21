@@ -1,7 +1,7 @@
 import React from "react";
 import { GoDotFill } from "react-icons/go";
-import { StackedChart, Pie, Button, SparkLine } from "../components";
-import { earningData, SparklineAreaData, ecomPieChartData } from "../data/dummy";
+import { StackedChart, Button, SparkLine } from "../components";
+import { earningData, SparklineAreaData } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Ecommerce = () => {

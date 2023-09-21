@@ -12,7 +12,6 @@ import {
 
 import { lineCustomSeries, LinePrimaryXAxis, LinePrimaryYAxis } from "../../data/dummy";
 import { useStateContext } from "../../contexts/ContextProvider";
-import { TextStyle } from "@syncfusion/ej2/svg-base";
 
 const LineChart = () => {
   const { chartStyle } = useStateContext();
