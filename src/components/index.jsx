@@ -1,4 +1,5 @@
 export { default as Button } from "./Button";
+export { default as CloseButton } from "./CloseButton";
 export { default as ThemeSettings } from "./ThemeSettings";
 export { default as Sidebar } from "./Sidebar";
 export { default as Navbar } from "./Navbar";
