@@ -1,8 +1,6 @@
 import React from "react";
 import {
   ScheduleComponent,
-  ViewDirective,
-  ViewsDirective,
   Day,
   Week,
   WorkWeek,
@@ -15,7 +13,6 @@ import {
 
 import { scheduleData } from "../data/dummy";
 import { Header } from "../components";
-import { StyleSettings } from "@syncfusion/ej2-react-charts";
 
 const Calendar = () => {
   return (

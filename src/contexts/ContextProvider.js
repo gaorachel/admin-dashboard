@@ -40,6 +40,7 @@ export const ContextProvider = ({ children }) => {
     setCurrentMode(currentTheme);
 
     setChartStyle({
+      ...initialChartStyle,
       legendSettings: {
         textStyle: {
           color: currentTheme === "Dark" ? "#fff" : "",

@@ -15,7 +15,6 @@ import {
 import { financialChartData, FinancialPrimaryXAxis, FinancialPrimaryYAxis } from "../../data/dummy";
 import { useStateContext } from "../../contexts/ContextProvider";
 import { Header } from "../../components";
-import { fontColor } from "@syncfusion/ej2/spreadsheet";
 
 const date1 = new Date("2017, 1, 1");
 
@@ -29,7 +28,7 @@ function filterValue(value) {
 const returnValue = financialChartData.filter(filterValue);
 
 const Financial = () => {
-  const { currentMode, chartStyle } = useStateContext();
+  const { chartStyle } = useStateContext();
 
   return (
     <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-gray-900 rounded-3xl text-gray-400 dark:text-white">
