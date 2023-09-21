@@ -19,7 +19,7 @@ const Sidebar = () => {
     "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:text-gray-800 m-2";
 
   return (
-    <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10 dark:bg-gray-900">
+    <div className="p-2 pl-3 w-72 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto dark:bg-gray-900 ">
       {activeMenu && (
         <>
           <div className=" flex justify-between items-center ">
